@@ -15,9 +15,11 @@ mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTo
 const connection = mongoose.connection;
 connection.once('open', ()=>{
     console.log("MongoDB database connection established successfully");
-    
+
 })
 
+const bookController = require('./controllers/books.controllers')
+app.use("/api", bookController)
 app.listen(PORT, ()=>{
     console.log("Listening on PORT: " + PORT);
 })
