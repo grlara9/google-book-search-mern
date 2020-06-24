@@ -1,4 +1,4 @@
-var express = require(express);
+var express = require('express');
 var router = express.Router();
 var Book = require("../models/books");
 
@@ -12,8 +12,9 @@ router.post("/books", (req, res)=>{
         link
     })
     newBook.save()
-    .then(()=> res.json("Task Added! "))
+    .then(()=> res.json("Book Added "))
     .catch(err=> res.status(400).json("Error: " + err))
 })
 
-module.exports = router;
+
+module.exports = router

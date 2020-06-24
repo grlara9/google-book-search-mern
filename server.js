@@ -4,8 +4,9 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-var PORT = process.env.PORT || 5000;
 
+var PORT = process.env.PORT || 5000;
+ 
 app.use(cors())
 app.use(express.json())
 
@@ -16,10 +17,11 @@ const connection = mongoose.connection;
 connection.once('open', ()=>{
     console.log("MongoDB database connection established successfully");
 
-})
+});
+const bookController = require("./controllers/books.controllers");
 
-const bookController = require('./controllers/books.controllers')
-app.use("/api", bookController)
+app.use("/api", bookController);
+
 app.listen(PORT, ()=>{
     console.log("Listening on PORT: " + PORT);
 })
