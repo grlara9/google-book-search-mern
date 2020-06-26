@@ -22,5 +22,10 @@ router.post("/books", (req, res)=>{
     .catch(err=> res.status(400).json("Error: " + err))
 })
 
+router.delete("/books/:id", (req, res)=>{
+    Book.findByIdAndDelete(req.params.id)
+    .then(()=>res.json("Book Deleted"))
+    .catch(err=>res.status(400).json("Error: " + err))
+})
 
 module.exports = router
