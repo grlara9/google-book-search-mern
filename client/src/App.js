@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Header from './components/header.component'
+import Search from './components/search.component'
 import axios from 'axios'
 import './App.css';
 
-class App extends React.Component() {
+class App extends Component {
   constructor(props){
-    super(props);
+    super(props)
       this.state={
         books:[],
         query:'java'
       }
+      
   }
 
   getBook = (e) =>{
-    e.preventDefault();
+    
     axios.get("https://www.googleapis.com/books/v1/volumes?q=" + this.state.query)
     .then(response =>{
       console.log(response)
@@ -22,10 +26,15 @@ class App extends React.Component() {
   }
 
   render(){
-  return (
+    return (
+    <Router>
+
     <div className="App">
-     <h1>g</h1>
+     <Header />
+      <Search />
     </div>
+    
+    </Router>
   );
 }
 }
