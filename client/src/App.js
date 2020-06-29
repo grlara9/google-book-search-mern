@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from './components/header.component'
 import Search from './components/search.component'
-import Book from './components/book.component'
+import Books from './components/book.component'
 import axios from 'axios'
 import './App.css';
 
@@ -39,7 +39,7 @@ class App extends Component {
     <div className="App">
      <Header />
       <Search onChange={this.onChange} getBook={this.getBook} />
-      <Book books={this.state.books}/>
+      <Books books={this.state.books}/>
     </div>
     
     </Router>

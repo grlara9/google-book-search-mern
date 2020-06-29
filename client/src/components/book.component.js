@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-//import BookList from './BookList'
+import BookList from './booklist.component'
 
 
-export class Books extends Component {
+class Books extends Component {
     showBooks = () => {
         const book = this.props.books;
 
