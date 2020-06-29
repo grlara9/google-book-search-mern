@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 
- const Search = ()=> {
+ const Search = (props)=> {
     return (
-        <form onSubmit={(e) => {props.onSubmit(e)}}> 
+        <form onSubmit={(e) => {props.getBook(e)}}> 
             <div className="row">
 
             <div className="form-group col-md-8">

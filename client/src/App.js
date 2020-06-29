@@ -10,28 +10,35 @@ class App extends Component {
     super(props)
       this.state={
         books:[],
-        query:'java'
+        query:''
       }
       
   }
 
   getBook = (e) =>{
-    
+    e.preventDefault()
     axios.get("https://www.googleapis.com/books/v1/volumes?q=" + this.state.query)
     .then(response =>{
       console.log(response)
-     // this.setState({ books: [...data.data.items ] })
+     this.setState({ books: [...response.data.items ] })
+     
     })
     .catch(error =>console.log("Error: " + error))
   }
 
+  onChange =(value)=>{
+    this.setState({
+      query:value
+    })
+}
   render(){
     return (
     <Router>
 
     <div className="App">
      <Header />
-      <Search />
+      <Search onChange={this.onChange} getBook={this.getBook} />
+      
     </div>
     
     </Router>
