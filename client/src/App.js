@@ -31,6 +31,17 @@ class App extends Component {
     this.setState({
       query:value
     })
+} 
+
+handleSavedButton = (e)=>{
+e.preventDefault();
+
+let savedBooks = this.state.books.filter(book => book.id === e.target.id)
+        savedBooks = savedBooks[0];
+        axios.post("/api/books", savedBooks)
+        
+            .then(this.setState({ message: alert("Your book is saved") }))
+            .catch(err => console.log(err))
 }
   render(){
     return (

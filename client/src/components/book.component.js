@@ -24,6 +24,7 @@ class Books extends Component {
                             author={books.volumeInfo.authors}
                             published={books.volumeInfo.publishedDate}
                             preview={books.volumeInfo.infoLink}
+                            handleSavedButton={this.handleSavedButton}
                        />
                    ))}
                 </div>
