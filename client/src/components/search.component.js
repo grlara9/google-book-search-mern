@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+class Search extends from Component{
 constructor(props){
     super(props)
       this.state={
@@ -42,7 +43,7 @@ handleSaveClick = (bookID)=>{
       });
     }).catch(err => console.log(err));
   }
- 
+}
 
 
  const Search = (props)=> {
