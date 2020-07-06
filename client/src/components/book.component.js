@@ -19,13 +19,12 @@ class Books extends Component {
                     book.map((books) => (
                        <BookList 
                             key={books.id}
-                           
                             title={books.volumeInfo.title}
                             author={books.volumeInfo.authors}
                             published={books.volumeInfo.publishedDate}
                             preview={books.volumeInfo.infoLink}
                             image={books.volumeInfo.imageLinks.thumbnail ? books.volumeInfo.imageLinks.thumbnail : "#"}
-                            handleSavedButton={this.handleSavedButton}
+                      
 
                        />
                    ))}
