@@ -10,13 +10,14 @@ function App() {
   
 return(
     <Router>
+        <div className="App">
+        <Header />
+        <Switch>
 
-    <div className="App">
-     <Header />
-      <Search onChange={this.onChange} getBook={this.getBook} />
-      <Books books={this.state.books} 
-      handleSaveClick={this.handleSaveClick}
-      />
+     <Route exact="/" component={Books} />
+     <Route exact path="/books" component={Books} />
+     <Route exact path="/search" component={Search} />
+        </Switch>
     </div>
     
     </Router>
