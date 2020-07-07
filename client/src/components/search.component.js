@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import Form from "./form.component"
+import Books from "./book.component"
+import axios from 'axios'
 
-class Search extends from Component{
+class Search extends Component{
 constructor(props){
     super(props)
       this.state={
@@ -43,30 +46,13 @@ handleSaveClick = (bookID)=>{
       });
     }).catch(err => console.log(err));
   }
-}
 
 
- const Search = (props)=> {
+  render(){
     return (
-        <form onSubmit={(e) => {props.getBook(e)}}> 
-            <div className="row">
-
-            <div className="form-group col-md-8">
-
-            <input  type="text" 
-            name="book"
-            onChange={(e)=> {props.onChange(e.target.value)}}
-            className="form-control form-control-lg" 
-            placeholder="Search for Book..."/>
-            </div>
-            <div className="form-group col-md-4">
-
-            <button type="submit" className="btn btn-primary btn-lg btn-block">Search..</button>
-            </div>
-            </div>
-        </form>
-        
-        )
-    
+     <Form onChange={this.onChange} getBook={this.getBook} />
+     <Books books={this.state.books}/>
+    )
+  }
 }
 export default Search
