@@ -1,45 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react'
 import BookList from './booklist.component'
 
-
-class Books extends Component {
-    showBooks = () => {
-        const book = this.props.books;
-
-        if(book.length === 0) return null;
-
-        console.log(book)
-
-        return (
-            <React.Fragment>
-                Results: 
-                <div className="col-12 p-5 row">
-                    
-                   { 
-                    book.map((books) => (
-                       <BookList 
-                            key={books.id}
-                            title={books.volumeInfo.title}
-                            author={books.volumeInfo.authors}
-                            published={books.volumeInfo.publishedDate}
-                            preview={books.volumeInfo.infoLink}
-                            image={books.volumeInfo.imageLinks.thumbnail ? books.volumeInfo.imageLinks.thumbnail : "#"}
+const Books= (props)=>{
+   return props.books.map(book=>(
+       <div className="container">
+           <BookList 
+                            key={book.id}
+                            title={book.volumeInfo.title}
+                            author={book.volumeInfo.authors}
+                            published={book.volumeInfo.publishedDate}
+                            preview={book.volumeInfo.infoLink}
+                            image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"}
                       
 
                        />
-                   ))}
-                </div>
-            </React.Fragment>
-        )
-    } 
-    
-    render() {
-        return (
-            <React.Fragment>
-                { this.showBooks()}
-            </React.Fragment>
-        )
-    }
-}
-
+       </div>
+   ))
+   }
 export default Books

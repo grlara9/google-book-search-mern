@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import Form from "./form.component"
 import Books from "./book.component"
 import axios from 'axios'
@@ -50,8 +50,12 @@ handleSaveClick = (bookID)=>{
 
   render(){
     return (
-     <Form onChange={this.onChange} getBook={this.getBook} />
+      <React.Fragment>
+
+     <Form onChange={this.onChange} 
+     getBook={this.getBook} />
      <Books books={this.state.books}/>
+     </React.Fragment>
     )
   }
 }
