@@ -51,27 +51,29 @@ handleSaveClick = (bookID)=>{
 
   render(){
     return (
-      <React.Fragment>
-
+    
+<div>
      <Form onChange={this.onChange} getBook={this.getBook} />
-     {(this.state.books && this.state.books.length > 0)?
+
+     {(this.state.books && this.state.books.length > 0) ?
+     <Books>
      {this.state.books.map(book =>{
        return (
          <BookList 
-          key={books.id}
-          title={books.volumeInfo.title}
-          author={books.volumeInfo.authors}
-          published={books.volumeInfo.publishedDate}
-          preview={books.volumeInfo.infoLink}
-          image={books.volumeInfo.imageLinks.thumbnail ? books.volumeInfo.imageLinks.thumbnail : "#"}
+          key={book.id}
+          title={book.volumeInfo.title}
+          author={book.volumeInfo.authors}
+          published={book.volumeInfo.publishedDate}
+          preview={book.volumeInfo.infoLink}
+          image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"}
           />
        )
      })}
+     </Books>
      : <h1>No results available</h1>
+    }
      
-  }
-     
-     </React.Fragment>
+     </div>
     )
   }
 }
