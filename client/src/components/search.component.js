@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import Form from "./form.component"
 import Books from "./book.component"
+import AddButton from './add.button.component'
 import axios from 'axios'
 import BookList from './booklist.component'
 
@@ -31,34 +32,16 @@ constructor(props){
     })
 } 
 
-handleSaveClick = (bookID)=>{
-  const book = this.state.books.find(book => book.id === bookID)
-
-  axios.post("http://localhost:5000/api/books", {
-    title: book.volumeInfo.title,
-      author: book.volumeInfo.authors[0],
-      description: book.volumeInfo.description,
-      image: book.volumeInfo.imageLinks.thumbnail,
-      link: book.volumeInfo.previewLink
-    })
-    .then(() => {
-      this.setState({
-        books: this.state.books.filter(book => book.id !== bookID)
-      });
-    }).catch(err => console.log(err));
-  }
-
-
-  render(){
-    return (
-    
-<div>
+render(){
+  return (
+    <div>
      <Form onChange={this.onChange} getBook={this.getBook} />
 
      {(this.state.books && this.state.books.length > 0) ?
      <Books>
      {this.state.books.map(book =>{
        return (
+         <div>
          <BookList 
           key={book.id}
           title={book.volumeInfo.title}
@@ -67,8 +50,16 @@ handleSaveClick = (bookID)=>{
           preview={book.volumeInfo.infoLink}
           image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"}
           />
-       )
-      })
+
+          <AddButton
+          title={book.volumeInfo.title}
+          author={book.volumeInfo.authors}
+          published={book.volumeInfo.publishedDate}
+          preview={book.volumeInfo.infoLink}
+          image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"}
+          />
+          </div>
+       )})
     }
      </Books>
     : <h1>No results available</h1>
