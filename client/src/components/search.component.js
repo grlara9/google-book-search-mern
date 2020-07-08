@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import Form from "./form.component"
 import Books from "./book.component"
 import axios from 'axios'
+import BookList from './booklist.component'
 
 class Search extends Component{
 constructor(props){
@@ -52,9 +53,24 @@ handleSaveClick = (bookID)=>{
     return (
       <React.Fragment>
 
-     <Form onChange={this.onChange} 
-     getBook={this.getBook} />
-     <Books books={this.state.books}/>
+     <Form onChange={this.onChange} getBook={this.getBook} />
+     {(this.state.books && this.state.books.length > 0)?
+     {this.state.books.map(book =>{
+       return (
+         <BookList 
+          key={books.id}
+          title={books.volumeInfo.title}
+          author={books.volumeInfo.authors}
+          published={books.volumeInfo.publishedDate}
+          preview={books.volumeInfo.infoLink}
+          image={books.volumeInfo.imageLinks.thumbnail ? books.volumeInfo.imageLinks.thumbnail : "#"}
+          />
+       )
+     })}
+     : <h1>No results available</h1>
+     
+  }
+     
      </React.Fragment>
     )
   }
