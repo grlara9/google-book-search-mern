@@ -68,12 +68,13 @@ handleSaveClick = (bookID)=>{
           image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"}
           />
        )
-     })}
-     </Books>
-     : <h1>No results available</h1>
+      })
     }
-     
-     </div>
+     </Books>
+    : <h1>No results available</h1>
+    }
+    
+    </div>
     )
   }
 }
