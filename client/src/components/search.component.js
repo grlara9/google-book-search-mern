@@ -33,7 +33,12 @@ class SearchBooks extends Component {
     handleSavedButton = event => {
         // console.log(event)
         event.preventDefault();
-       
+        let savedBooks = this.state.books.filter(book => book.id === event.target.id)
+        savedBooks = savedBooks[0];
+        console.log("this is in savedbooks" + savedBooks)
+        axios.post('http://localhost:5000/api/books', savedBooks)
+            .then(this.setState({ message: alert("Your book is saved") }))
+            .catch(err => console.log(err))
     }
     render() {
         return (
