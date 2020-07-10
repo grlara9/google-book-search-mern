@@ -1,72 +1,61 @@
-import React, { Component, Fragment } from 'react'
-import Form from "./form.component"
-import Books from "./book.component"
-import AddButton from './add.button.component'
+import React, { Component } from "react";
 import axios from 'axios'
-import BookList from './booklist.component'
+import SearchForm from "../components/form.component";
+import SearchResult from "../components/book.component"
 
-class Search extends Component{
-constructor(props){
-    super(props)
-      this.state={
-        books:[],
-        query:''
-      }
-      
-  }
 
-  getBook = (e) =>{
-    e.preventDefault()
-    axios.get("https://www.googleapis.com/books/v1/volumes?q=" + this.state.query)
-    .then(response =>{
-      console.log(response)
-     this.setState({ books: [...response.data.items ] })
-     
-    })
-    .catch(error =>console.log("Error: " + error))
-  }
+class SearchBooks extends Component {
+    //create state
+    state = {
+        query: "",
+        books: [],
+        error: "",
+        message: ""
+    };
 
-  onChange =(value)=>{
-    this.setState({
-      query:value
-    })
-} 
-
-render(){
-  return (
-    <div>
-     <Form onChange={this.onChange} getBook={this.getBook} />
-
-     {(this.state.books && this.state.books.length > 0) ?
-     <Books>
-     {this.state.books.map(book =>{
-       return (
-         <div>
-         <BookList 
-          key={book.id}
-          title={book.volumeInfo.title}
-          author={book.volumeInfo.authors}
-          published={book.volumeInfo.publishedDate}
-          preview={book.volumeInfo.infoLink}
-          image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"}
-          />
-
-          <AddButton
-          title={book.volumeInfo.title}
-          author={book.volumeInfo.authors}
-          published={book.volumeInfo.publishedDate}
-          preview={book.volumeInfo.infoLink}
-          image={book.volumeInfo.imageLinks.thumbnail ? book.volumeInfo.imageLinks.thumbnail : "#"}
-          />
-          </div>
-       )})
+    //function to take value of what enter in the search bar
+    handleInputChange = event => {
+        this.setState({ query: event.target.value })
     }
-     </Books>
-    : <h1>No results available</h1>
+
+    //function to control the submit button of the search form 
+    handleFormSubmit = event => {
+      event.preventDefault()
+      axios.get("https://www.googleapis.com/books/v1/volumes?q=" + this.state.query)
+      .then(response =>{
+        console.log(response)
+       this.setState({ books: [...response.data.items ] })
+       
+      })
+      .catch(error =>console.log("Error: " + error))
     }
-    
-    </div>
-    )
-  }
+
+    handleSavedButton = event => {
+        // console.log(event)
+        event.preventDefault();
+       
+    }
+    render() {
+        return (
+            <div className="container">
+                    <h1 className="text-white">Find Your Favorite Books with GoogleBook API</h1>
+            
+                            <SearchForm
+                                handleFormSubmit={this.handleFormSubmit}
+                                handleInputChange={this.handleInputChange}
+                            />
+                      
+                   
+               
+                <br></br>
+                
+                    <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
+               
+            </div>
+        )
+    }
+
+
 }
-export default Search
+
+export default SearchBooks

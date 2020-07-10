@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
+import React from "react";
 
 
-const Form = (props)=> {
+const SearchForm = props => {
     return (
-        <form onSubmit={(e) => {props.getBook(e)}}> 
-            <div className="row">
-
-            <div className="form-group col-md-8">
-
-            <input  type="text" 
-            name="book"
-            onChange={(e)=> {props.onChange(e.target.value)}}
-            className="form-control form-control-lg" 
-            placeholder="Search for Book..."/>
+        <form>
+            <div className="form-group">
+                <label className="BookSearchLabel"><h3>Search For Book</h3></label>
+                <br></br>
+                <input className="col-12 form-control"
+                    value={props.search}
+                    type="text"
+                    name="searchBook"
+                    placeholder="Enter Book's Name"
+                    onChange={props.handleInputChange}
+                />
             </div>
-            <div className="form-group col-md-4">
-
-            <button type="submit" className="btn btn-primary btn-lg btn-block">Search..</button>
-            </div>
-            </div>
+            <button type="submit" className="submitBtn btn btn-primary" onClick={props.handleFormSubmit}>
+                Submit
+            </button>
         </form>
-        
-        )
-    }
-        export default Form;
+    )
+}
+export default SearchForm
