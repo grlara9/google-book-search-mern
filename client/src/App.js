@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from './components/header.component'
 import SearchBook from './components/search.component'
 import Saved from './components/saved.component'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 
