@@ -14,8 +14,8 @@ class SearchBooks extends Component {
     };
 
     //function to take value of what enter in the search bar
-    handleInputChange = event => {
-        this.setState({ query: event.target.value })
+    handleInputChange = e => {
+        this.setState({ query: e.target.value })
     }
 
     //function to control the submit button of the search form 
