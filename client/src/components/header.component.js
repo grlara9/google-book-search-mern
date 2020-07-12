@@ -11,7 +11,7 @@ export default function Header(props) {
             <div id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item" id="home">
-                        <Link to="/search" className="nav-link" ><button type="button" className="btn btn-info text-white">Search Books</button></Link>
+                        <Link to="/" className="nav-link" ><button type="button" className="btn btn-info text-white">Search Books</button></Link>
                     </li>
                     <li className="nav-item" id="report">
                         <Link to="/saved" className="nav-link"><button type="button" className="btn btn-warning text-white">Saved Books</button></Link>

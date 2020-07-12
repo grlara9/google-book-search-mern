@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Header from './components/header.component'
-import Search from './components/search.component'
-import Books from './components/book.component'
 import SearchBook from './components/search.component'
-import axios from 'axios'
+import Saved from './components/saved.component'
 import './App.css';
+
 
 function App() {
   
@@ -14,8 +13,8 @@ return(
         <div className="App">
     <Header />
       <Switch>
-        
-        <Route exact path="/search" component={SearchBook} />
+        <Route exact path="/" component={SearchBook} />
+        <Route path="/saved" component={Saved} />
       </Switch>
     </div>
     
