@@ -12,6 +12,7 @@ function BookList(props)  {
                   <p className="card-text">Title: {props.title}</p>
                   <p className="card-text">Author: {props.author}</p>
                   <p className="card-text">Published Date: {props.published}</p>
+  <p className="card-text">Description: {props.description}</p>
                   <button type="button" className="btn btn-info"><a href={props.preview}>View</a></button>
                   <button className="saveBook btn btn-primary" id={props.key} onClick={(event) => props.handleSavedButton(event)}>
                                             Save Book

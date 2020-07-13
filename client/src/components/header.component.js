@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom'
 
 export default function Header(props) {
     return (  
-        <nav className="navbar navbar-expand-lg navbar-primary ">
+        <nav className="navbar navbar-expand-lg navbar-primary">
             <Link to ="/"className="navbar-brand">
                 <h2 className="text-white">Google Book Search</h2>
             </Link>

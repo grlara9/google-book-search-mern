@@ -17,3 +17,21 @@
     display:flex;
     align-items: flex-end;
   }
+  form{
+    padding: 1rem 0 1.5rem;
+    position: relative;
+  }
+  .form-container{
+    background-color: #33658a;
+    color:white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  input{
+    margin: 1vw 0;
+    width: 98%;
+    padding: .75vw;
+    font-size: 1.25vw;
+    border-radius: 5px;
+    border:none;
+  }
