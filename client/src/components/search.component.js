@@ -43,9 +43,7 @@ class SearchBooks extends Component {
     render() {
         return (
             <div className="container">
-                    <h1 className="text-white">Find Your Favorite Books with GoogleBook API</h1>
-            
-                            <SearchForm
+                                <SearchForm
                                 handleFormSubmit={this.handleFormSubmit}
                                 handleInputChange={this.handleInputChange}
                             />

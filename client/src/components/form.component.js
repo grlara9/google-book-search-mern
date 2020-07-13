@@ -6,7 +6,7 @@ const SearchForm = props => {
         <div className="form-container">
         <form>
            
-                <label className="BookSearchLabel"><h3>Search For Book</h3></label>
+                <label className="BookSearchLabel"> <h1 className="text-white">Find Your Favorite Books with GoogleBook API</h1></label>
                 <br></br>
                 <input 
                     value={props.search}
