@@ -40,25 +40,17 @@ class SearchBooks extends Component {
             .then(this.setState({ message: alert("Your book is saved") }))
             .catch(err => console.log(err))
     }
-    render() {
-        return (
-            <div className="container">
-                                <SearchForm
-                                handleFormSubmit={this.handleFormSubmit}
-                                handleInputChange={this.handleInputChange}
-                            />
-                      
-                   
-               
-                <br></br>
-                
-                    <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
-               
-            </div>
+render() {
+    return (
+        <div className="container">
+            <SearchForm
+                handleFormSubmit={this.handleFormSubmit}
+                handleInputChange={this.handleInputChange}
+            />
+            <br></br>
+            <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
+        </div>
         )
     }
-
-
 }
-
 export default SearchBooks
