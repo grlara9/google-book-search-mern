@@ -30,7 +30,7 @@ function BookList(props)  {
                 <div className="column2">
                     <div className="content">
                         <p>Published Date: {props.published}</p>
-                        <p>Description: {props.description}</p>
+                        <p className="card-text">Description: {props.description}</p>
                     </div>
                 </div>
             </div>

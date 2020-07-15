@@ -51,8 +51,8 @@
   flex-wrap: wrap;
 }
 .column1{
-  flex: 2;
+  flex: 1;
 }
 .column2{
-  flex:1;
+  flex:2;
 }
