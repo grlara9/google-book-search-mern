@@ -5,7 +5,7 @@
   }
 
   body{
-    background-color: #A9A9A9;
+    background-color: #2d3436;
   }
   .navbar{
     display:flex;
@@ -39,19 +39,20 @@
 
   .card{
     background-color: #fff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 5px;
     min-height: 300px;
+    margin:10px;
   }
 
-  .img {
-    border-radius: 50%;
-}
 
 .row{
   display: flex;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
 }
-.column{
-  flex: 1;
+.column1{
+  flex: 2;
+}
+.column2{
+  flex:1;
 }
