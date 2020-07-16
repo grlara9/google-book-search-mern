@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import SavedList from './saved-list.component';
 export default class Saved extends Component {
     constructor(props){
         super(props);
@@ -22,7 +23,7 @@ export default class Saved extends Component {
     render() {
         return (
             <div>
-                This is saved page
+                <SavedList savedbooks={this.state.savedbooks} DeleteButton={this.DeleteButton}/>
             </div>
         )
     }
