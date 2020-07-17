@@ -17,7 +17,7 @@ const SavedList = props => {
                     </div>
                     <div className="column2">
                         <button type="button" className="btn btn-info"><a href={book.preview}>View</a></button>
-                       
+                        <button className="deleteBook btn btn-danger" id={book._id} onClick={() => props.DeleteButton(book._id)}>Delete Book</button>
                     </div>
                   </div>  
 
