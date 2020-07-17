@@ -15,8 +15,8 @@ export default class Saved extends Component {
     }
 
     //function to remove book by id
-    DeleteButton = id => {
-        axios.delete('http://localhost:5000/api/books'+id)
+    DeleteButton = (id) => {
+        axios.delete('http://localhost:5000/api/books/'+id)
             .then(response => this.componentDidMount())
             .catch(err => console.log(err))
     }
