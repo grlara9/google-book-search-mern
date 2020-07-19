@@ -8,6 +8,8 @@ export default function Header(props) {
             <Link to ="/"className="navbar-brand">
                 <h2 className="text-white">Google Book Search</h2>
             </Link>
+
+        
             <div id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item" id="home">

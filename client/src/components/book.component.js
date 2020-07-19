@@ -25,9 +25,7 @@ const SearchResult = props => {
                                  published={book.volumeInfo.publishedDate}
                                  description={book.volumeInfo.description}
                                  preview={book.volumeInfo.infoLink}
-                                 image={book.volumeInfo.imageLinks === undefined
-                                    ? ""
-                                    : `${book.volumeInfo.imageLinks.thumbnail}`}
+                                 image={book.volumeInfo.imageLinks === undefined? "": `${book.volumeInfo.imageLinks.thumbnail}`}
                                  handleSavedButton={props.handleSavedButton}
                                  />
                                  </div>

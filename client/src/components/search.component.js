@@ -31,14 +31,19 @@ class SearchBooks extends Component {
     }
 
     handleSavedButton = event => {
-        // console.log(event)
+        const bookData = {
+            title: this.props.title,
+            authors: this.props.authors,
+            description: this.props.description,
+            img: this.props.img,
+            link: this.props.link
+        }
         event.preventDefault();
-        let savedBooks = this.state.books.filter(book => book.id === event.target.id)
-        savedBooks = savedBooks[0];
-        console.log("this is in savedbooks" + savedBooks)
-        axios.post('http://localhost:5000/api/books', savedBooks)
-            .then(this.setState({ message: alert("Your book is saved") }))
-            .catch(err => console.log(err))
+        axios.post('http://localhost:5000/api/books', bookData)
+        .then((response) => {console.log(response)})
+        .catch((err) => {console.log(err)
+            }
+        );
     }
 render() {
     return (
