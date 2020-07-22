@@ -14,8 +14,8 @@ function BookList(props)  {
                         </div>
                     </div>
                     <div className="column2">
-                        <button type="button" className="btn btn-info"><a href={props.preview}>View</a></button>
-                        <button className="saveBook btn btn-primary" id={props.key} onClick={(event) => props.handleSavedButton(event)}>Save Book</button>
+                        <a href={props.preview}><button type="button" className="view-button">View</button></a>
+                        <button className="save-button" id={props.key} onClick={(event) => props.handleSavedButton(event)}>Save Book</button>
                     </div>
                   </div>  
 
