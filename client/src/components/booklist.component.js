@@ -14,8 +14,10 @@ function BookList(props)  {
                         </div>
                     </div>
                     <div className="column2">
-                        <a href={props.preview}><button type="button" className="view-button">View</button></a>
-                        <button className="save-button" id={props.key} onClick={(event) => props.handleSavedButton(event)}>Save Book</button>
+                        <div className="child-col">
+                            <a href={props.preview}><button type="button" className="view-button">View</button></a>
+                            <button className="save-button" id={props.key} onClick={(event) => props.handleSavedButton(event)}>Save Book</button>
+                        </div>
                     </div>
                   </div>  
 
@@ -24,11 +26,11 @@ function BookList(props)  {
                     <div className="photo">
                         <img src={props.image}  className="img" alt="text"  />
                     </div>
+                    <p>Published Date: {props.published}</p>
                 </div>
 
                 <div className="column2">
                     <div className="content">
-                        <p>Published Date: {props.published}</p>
                         <p className="card-text">Description: {props.description}</p>
                     </div>
                 </div>

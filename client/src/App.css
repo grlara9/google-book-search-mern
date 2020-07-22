@@ -77,13 +77,18 @@
     text-decoration: none;
   }
 
-.row{
-  display: flex;
-  flex-wrap: wrap;
-}
-.column1{
-  flex: 1;
-}
-.column2{
-  flex:2;
-}
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .column1{
+    flex: 1;
+  }
+  .column2{
+    flex:2;
+    
+  }
+  .child-col{
+    display: flex;
+    justify-content: flex-end;
+  }
