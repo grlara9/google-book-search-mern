@@ -5,9 +5,12 @@ import { Link } from 'react-router-dom'
 export default function Header(props) {
     return (  
         <nav className="navbar navbar-expand-lg navbar-primary">
+           
+                <div className="brand">
             <Link to ="/"className="navbar-brand">
                 <h2 className="text-white">Google Book Search</h2>
             </Link>
+            </div>
 
         
             <div id="navbarNav">
@@ -20,6 +23,7 @@ export default function Header(props) {
                     </li>
                 </ul>
             </div>
+        
         </nav>
     )
 }
