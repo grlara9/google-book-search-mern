@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import NavLinks from './NavLinks'
 
-//import './MainNavigation.css';
+import './Navigation.css';
 
 const Navigation = props => {
     return (

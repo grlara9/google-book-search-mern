@@ -13,12 +13,13 @@ return(
     <Router>
         <div className="container">
     <Navigation />
+    <main>
       <Switch>
         <Route exact path="/" component={SearchBook} />
         <Route path="/saved" component={Saved} />
       </Switch>
+    </main>
     </div>
-    
     </Router>
   );
 }
