@@ -20,3 +20,18 @@
     text-decoration: none;
     padding: 0.5rem;
   }
+
+  @media (min-width: 768px) {
+    .nav-links {
+      flex-direction: row;
+    }
+  
+    .nav-links li {
+      margin: 0 0.5rem;
+    }
+  
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+  }
