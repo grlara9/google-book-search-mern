@@ -4,9 +4,9 @@ import React from "react";
 const SearchForm = props => {
     return (
         <div className="form-container">
-        <form>
+        <form style={{textAlign: "center"}}>
            
-                <label className="BookSearchLabel"> <h1 className="text-white">Find Your Favorite Books with GoogleBook API</h1></label>
+                <label className="BookSearchLabel" > <h1 className="text-white"  >Find Your Favorite Books with GoogleBook API</h1></label>
                 <br></br>
                 <input 
                     value={props.search}
