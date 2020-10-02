@@ -11,7 +11,7 @@ function App() {
   
 return(
     <Router>
-        <div className="container">
+      
     <Navigation />
     <main>
       <Switch>
@@ -19,7 +19,7 @@ return(
         <Route path="/saved" component={Saved} />
       </Switch>
     </main>
-    </div>
+    
     </Router>
   );
 }
