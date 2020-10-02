@@ -8,20 +8,16 @@ import './App.css';
 
 
 function App() {
-  
-return(
+  return(
     <Router>
-      
-    <Navigation />
-    <main>
-      <Switch>
-        <Route exact path="/" component={SearchBook} />
-        <Route path="/saved" component={Saved} />
-      </Switch>
-    </main>
-    
+      <Navigation />
+      <main>
+        <Switch>
+          <Route exact path="/" component={SearchBook} />
+          <Route path="/saved" component={Saved} />
+        </Switch>
+      </main>
     </Router>
   );
 }
-
 export default App;

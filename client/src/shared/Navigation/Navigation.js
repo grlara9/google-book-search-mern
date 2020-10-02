@@ -2,6 +2,7 @@ import React, { useState }  from 'react'
 import { Link } from 'react-router-dom';
 
 import Header from './Header';
+import SideDrawer from './SideBar'
 import NavLinks from './NavLinks'
 
 import './Navigation.css';
