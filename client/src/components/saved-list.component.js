@@ -3,11 +3,17 @@ import React, { Component } from 'react'
 const SavedList = props => {
     if (props.savedbooks.length === 0) {
         return (
-          <div className="center">
+            <div className="card">
+                <div className="card-body player">
+                    <div className="article">
+                        <h2 style={{textAlign: "center"}}>No saved books found.</h2>
+                </div>
+                </div>
+        
+                </div>
             
-            <h2>No saved books found.</h2>
            
-          </div>
+         
         );
       }
         return (
