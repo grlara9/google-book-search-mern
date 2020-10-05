@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
 
 const SavedList = props => {
-    
+    if (props.savedbooks.length === 0) {
         return (
+          <div className="center">
             
+            <h2>No saved books found.</h2>
+           
+          </div>
+        );
+      }
+        return (
             <div className="card">
                     {props.savedbooks.map(book => {
                 return (
-                    <div>
+                    <div> 
                     <div className="row">
                     <div className="column1">
                         <div className="header">

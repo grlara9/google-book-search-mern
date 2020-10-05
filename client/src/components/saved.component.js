@@ -23,8 +23,10 @@ export default class Saved extends Component {
     }
     render() {
         return (
-            <div>
-                <SavedList savedbooks={this.state.savedbooks} DeleteButton={this.DeleteButton}/>
+            <div> 
+                <SavedList 
+                savedbooks={this.state.savedbooks} 
+                DeleteButton={this.DeleteButton}/>
             </div>
         )
     }
