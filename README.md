@@ -5,10 +5,12 @@ Google Book Search app is full MERN stack application that helps users search fo
 
 ## Google book search
 Search page
-![googlebook](screenshots/tyui.png)
+![googlebook](screenshots/foto1.png)
 
-save page
-![googlebook](screenshots/qwer.png)
+Responsive menu
+![googlebook](screenshots/foto2.png)
+
+![googlebook](screenshots/foto3.png)
  
 ## Deply Link
 [Deploy] (https://googlesearchappp.herokuapp.com/)
