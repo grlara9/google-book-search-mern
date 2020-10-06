@@ -23,9 +23,10 @@
   .nav-links a:hover,
   .nav-links a:active,
   .nav-links a.active {
-    background: #f8df00;
+    background: #f2a104;
     border-color: #292929;
     color: #292929;
+    text-decoration: none;
   }
   .nav-links button:focus {
     outline: none;
