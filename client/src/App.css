@@ -5,7 +5,7 @@
   }
 
   body{
-    background-color: #2d3436;
+    background-color: #72a2c0;
   }
   .navbar{
     display:flex;
@@ -30,7 +30,7 @@
     position: relative;
   }
   .form-container{
-    background-color: #33658a;
+    background-color: #1d65a6;
     color:white;
     padding: 10px;
     border-radius: 5px;
@@ -70,7 +70,7 @@
     text-decoration: none;
   }
   .save-button{
-    background-color: #4CAF50;
+    background-color: #00743f;
     color: white;
     border: none;
     padding: 5px 10px;
