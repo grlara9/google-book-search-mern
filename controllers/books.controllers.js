@@ -8,6 +8,9 @@ router.get("/books", (req, res)=>{
     .catch(err=> res.status(400).json("Error: "+ err))
 })
 
+const getBooks = async (req, res, next)=>{
+    
+}
 router.post("/books", (req, res)=>{
     const {title, authors, description, image, link} = req.body
     const newBook = new Book({

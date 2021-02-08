@@ -31,6 +31,8 @@ class SearchBooks extends Component {
     }
 
     handleSavedButton = event => {
+        event.preventDefault();
+
         const bookData = {
             title: this.props.title,
             authors: this.props.authors,
@@ -38,7 +40,7 @@ class SearchBooks extends Component {
             img: this.props.img,
             link: this.props.link
         }
-        event.preventDefault();
+       console.log("aqui esta" + bookData)
         axios.post('http://localhost:5000/api/books', bookData)
         .then((response) => {console.log(response)})
         .catch((err) => {console.log(err)
