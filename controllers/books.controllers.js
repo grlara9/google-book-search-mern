@@ -1,5 +1,6 @@
 
-var Book = require("../models/books");
+const { response } = require("express");
+const Book = require("../models/books");
 
 const getBooks = (req, res) =>{
     Book.find()
@@ -10,6 +11,23 @@ const getBooks = (req, res) =>{
     .catch(err=> res.status(400).json("Error: "+ err))
 }
 
+const newBook = (req, res) =>{
+    const {title, authors, description, image, link} = req.body
+
+ 
+    Book.create( {
+        title,
+        authors,
+        description,
+        image,
+        link
+    })
+        
+    
+    .then(()=> res.json("Book Added "))
+    .catch(err=> res.status(400).json("Error: " + err))
+}
+
 const deleteBook = (req, res)=>{
     Book.findByIdAndDelete(req.params.id)
     .then(()=>res.json("Book Deleted"))
@@ -17,4 +35,5 @@ const deleteBook = (req, res)=>{
 }
 
 exports.getBooks= getBooks;
+exports.newBook= newBook;
 exports.deleteBook= deleteBook;

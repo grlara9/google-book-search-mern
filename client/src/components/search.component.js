@@ -8,12 +8,14 @@ class SearchBooks extends Component {
     //create state
     state = {
         query: "",
-        books: [],
+        books: {},
         error: "",
         message: ""
     };
+    
+    
 
-    //function to take value of what enter in the search bar
+    //function to take value of what enter in the search bar 
     handleInputChange = e => {
         this.setState({ query: e.target.value })
     }
@@ -30,22 +32,26 @@ class SearchBooks extends Component {
       .catch(error =>console.log("Error: " + error))
     }
 
-    handleSavedButton = event => {
-        event.preventDefault();
+    handleSavedButton = bookID => {
+        const book = this.state.books.find(book => book.id === bookID);
 
         const bookData = {
-            title: this.props.title,
-            authors: this.props.authors,
-            description: this.props.description,
-            img: this.props.img,
-            link: this.props.link
+            title: book.volumeInfo.title,
+            authors: book.volumeInfo.authors,
+            description: book.volumeInfo.description,
+            image: book.volumeInfo.imageLinks.smallThumbnail,
+            link: book.volumeInfo.infoLink,
+           
         }
-       console.log("aqui esta" + bookData)
+     
+
         axios.post('http://localhost:5000/api/books', bookData)
-        .then((response) => {console.log(response)})
-        .catch((err) => {console.log(err)
-            }
-        );
+
+        .then(() => {
+            this.setState({
+              books: this.state.books.filter(book => book.id !== bookID)
+            });
+       })
     }
 render() {
     return (
