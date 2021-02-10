@@ -6,4 +6,5 @@ const router = express.Router();
 
 router.get('/books', booksControllers.getBooks);
 
+router.delete('/books/:id', booksControllers.deleteBook)
 module.exports = router;
