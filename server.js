@@ -21,7 +21,8 @@ connection.once('open', ()=>{
 });
 const bookController = require("./controllers/books.controllers");
 
-app.use("/api", bookController);
+const bookRoute = require('./routes/books.routes');
+app.use("/api", bookRoute);
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'))

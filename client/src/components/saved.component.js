@@ -11,7 +11,15 @@ export default class Saved extends Component {
     }
     componentDidMount(){
         axios.get('http://localhost:5000/api/books')
-        .then(response => this.setState({ savedbooks: response.data }))
+
+
+        .then(response => {
+            console.log("aver que hay aqui alv" + response);
+            this.setState({
+             savedbooks: response.data }
+             )
+            })
+
         .catch(err => console.log(err))
     }
 
