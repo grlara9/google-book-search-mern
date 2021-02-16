@@ -8,7 +8,7 @@ class SearchBooks extends Component {
     //create state
     state = {
         query: "",
-        books: {},
+        books: [],
         error: "",
         message: ""
     };
@@ -32,27 +32,25 @@ class SearchBooks extends Component {
       .catch(error =>console.log("Error: " + error))
     }
 
-    handleSavedButton = bookID => {
-        const book = this.state.books.find(book => book.id === bookID);
+         saveGoogleBooks = currentBook => {
+      
+        console.log("This is the book with id" + currentBook);
+        
+        
 
-        const bookData = {
-            title: book.volumeInfo.title,
-            authors: book.volumeInfo.authors,
-            description: book.volumeInfo.description,
-            image: book.volumeInfo.imageLinks.smallThumbnail,
-            link: book.volumeInfo.infoLink,
-           
-        }
-     
+        axios.post("http://localhost:5000/api/books", ({
+            id: currentBook.id,
+            title: currentBook.title,
+            authors: currentBook.authors,
+            description:currentBook.description,
+            image: currentBook.image,
+            link: currentBook.link
 
-        axios.post('http://localhost:5000/api/books', bookData)
-
-        .then(() => {
-            this.setState({
-              books: this.state.books.filter(book => book.id !== bookID)
-            });
-       })
+        }))
+        .then(res => console.log("Successful POST to DB!", res))
+        .catch(err => console.log("this is the error", err));
     }
+    
 render() {
     return (
         <div className="container">
@@ -61,7 +59,9 @@ render() {
                 handleInputChange={this.handleInputChange}
             />
             <br></br>
-            <SearchResult books={this.state.books} handleSavedButton={this.handleSavedButton} />
+            <SearchResult
+             books={this.state.books} 
+             saveGoogleBooks={this.saveGoogleBooks} />
         </div>
         )
     }
