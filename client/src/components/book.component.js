@@ -3,6 +3,7 @@ import BookList from './booklist.component'
 
 const SearchResult = props => {
 
+    const { saveBook } = props;
    
 
     return (props.books.length === 0) ? ( 
@@ -28,8 +29,8 @@ const SearchResult = props => {
                                  published={book.volumeInfo.publishedDate}
                                  description={book.volumeInfo.description}
                                  preview={book.volumeInfo.infoLink}
-                                 image={book.volumeInfo.imageLinks === undefined? "": `${book.volumeInfo.imageLinks.thumbnail}`}
-                                 saveGoogleBooks={props.saveGoogleBooks}
+                                 image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://previews.123rf.com/images/pavelstasevich/pavelstasevich1811/pavelstasevich181101065/112815953-no-image-available-icon-flat-vector.jpg"}
+                                 saveBook={saveBook}
                                  />
                                  </div>
                             );

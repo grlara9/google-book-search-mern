@@ -32,25 +32,24 @@ class SearchBooks extends Component {
       .catch(error =>console.log("Error: " + error))
     }
 
-         saveGoogleBooks = currentBook => {
+    saveBook(book) {
+
+        console.log("This is the book with id" + book);
+
+        const bookData = {
+          title: book.title,
+          authors: book.authors,
+          infoLink: book.infoLink,
+          image: book.image,
+          description: book.description
+        };
       
-        console.log("This is the book with id" + currentBook);
-        
-        
+        axios.post("http://localhost:5000/api/books", bookData)
 
-        axios.post("http://localhost:5000/api/books", ({
-            id: currentBook.id,
-            title: currentBook.title,
-            authors: currentBook.authors,
-            description:currentBook.description,
-            image: currentBook.image,
-            link: currentBook.link
-
-        }))
         .then(res => console.log("Successful POST to DB!", res))
         .catch(err => console.log("this is the error", err));
     }
-    
+
 render() {
     return (
         <div className="container">
@@ -61,7 +60,7 @@ render() {
             <br></br>
             <SearchResult
              books={this.state.books} 
-             saveGoogleBooks={this.saveGoogleBooks} />
+             saveBook={book => this.saveBook(book)} />
         </div>
         )
     }

@@ -1,12 +1,10 @@
 import React from 'react'
 
 
-function BookList(props)  {
+const BookList = props =>  {
 
-    onClickFunc = () => {
-        this.props.saveGoogleBook(this.props)//.bind(this, this.props);
-        
-    }
+    const { saveBook } = props;
+    
     
   return( 
        
@@ -22,7 +20,7 @@ function BookList(props)  {
                     <div className="column2">
                         <div className="child-col">
                             <a href={props.preview}><button type="button" className="view-button">View</button></a>
-                            <button className="save-button" id={props.key} onClick={this.onClickFunc} >Save Book</button>
+                            <button className="save-button" id={props.key} onClick={() => saveBook(props)} >Save Book</button>
                         </div>
                     </div>
                   </div>  
