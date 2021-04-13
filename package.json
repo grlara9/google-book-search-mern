@@ -9,7 +9,7 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js"
-  },
+  }, 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/grlara9/google-book-search-mern.git"
