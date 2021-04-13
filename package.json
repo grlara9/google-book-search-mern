@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/grlara9/google-book-search-mern/issues"
   },
-  "homepage": "https://github.com/grlara9/google-book-search-mern#readme",
+  "homepage": "https://github.com/grlara9/google-book-search-mern",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
