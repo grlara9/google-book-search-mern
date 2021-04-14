@@ -10,6 +10,9 @@
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js"
   }, 
+  "engines":{
+    "node": "10.15.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/grlara9/google-book-search-mern.git"
@@ -26,5 +29,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.20"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }  
