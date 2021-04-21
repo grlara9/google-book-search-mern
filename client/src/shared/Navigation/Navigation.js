@@ -39,7 +39,7 @@ const Navigation = props => {
           <NavLinks />
         </nav>
       </Header>
-    </React.Fragment>
+    </React.Fragment> 
   );
 };
 
