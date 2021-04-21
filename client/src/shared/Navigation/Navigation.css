@@ -43,4 +43,12 @@
   .main-navigation__header-nav {
     display: block;
   }
+
+}
+
+@media (max-width: 768px){
+  .main-navigation__title{
+    font-size: 1.8rem;
+    
+  }
 }
