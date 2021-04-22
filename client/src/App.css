@@ -51,7 +51,7 @@
     border-radius: 5px;
     min-height: 300px;
     margin:10px;
-    width: auto 100%;
+   
     
   }
   .view-button{
@@ -123,6 +123,9 @@
   button{
     width: 100%;
   }
+  .card{
+    margin:5px 12px;
+  }
 
   .row{
     display: flex;
@@ -134,9 +137,15 @@
     margin-bottom: 12px;
   }
   .photo img{
-    width: 100%;
+    
+    margin-bottom: 12px;
   }
  .header{
    text-align: center;
+ }
+ .child-col{
+   display:flex;
+   flex-wrap: wrap;
+   flex-direction: column;
  }
 }
