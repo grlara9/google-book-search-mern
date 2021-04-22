@@ -10,7 +10,7 @@ const SearchForm = props => {
                 <br></br>
                 <input 
                     value={props.search}
-                    type="text"
+                    type="text" 
                     name="searchBook"
                     placeholder="Enter Book's Name"
                     onChange={props.handleInputChange}
