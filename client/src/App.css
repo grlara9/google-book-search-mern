@@ -51,6 +51,8 @@
     border-radius: 5px;
     min-height: 300px;
     margin:10px;
+    width: auto 100%;
+    
   }
   .view-button{
     background-color: #33658a;
@@ -92,7 +94,8 @@
 
   .row{
     display: flex;
-    flex-wrap: wrap;
+    
+  
   }
   .column1{
     flex: 1;
@@ -116,11 +119,24 @@
     width: 100%;
     padding: 12px;
     font-size: 16px;
-
-    
   }
-
   button{
     width: 100%;
   }
+
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+  }
+  .column2 button{
+    margin-bottom: 12px;
+  }
+  .photo img{
+    width: 100%;
+  }
+ .header{
+   text-align: center;
+ }
 }

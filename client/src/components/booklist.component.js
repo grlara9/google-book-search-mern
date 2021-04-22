@@ -12,7 +12,7 @@ const BookList = props =>  {
                 <div className="row">
                     <div className="column1">
                         <div className="header" key={props.id}>
-                            {}
+                            
                             <h2>Title: {props.title}</h2>
                             <p >Author: {props.author}</p>
                         </div>
@@ -38,7 +38,7 @@ const BookList = props =>  {
                         <p className="card-text">Description: {props.description}</p>
                     </div>
                 </div>
-            </div>
+            </div> 
                 </div>                    
             
        
